@@ -305,3 +305,142 @@ h2 {
     padding: 24px;
   }
 }
+
+/* ========================
+   Modal Styling
+======================== */
+
+/* Modal container */
+.task-modal {
+  position: fixed; /* stays in place on scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfect centering */
+  background: #F4F7FD; /* Light Grey (Light BG) */
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  padding: 0;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.25s ease-out;
+  z-index: 1000;
+}
+
+/* Backdrop overlay */
+.task-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content layout */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+/* Labels */
+.modal-content label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-font-color);
+  margin-bottom: 4px;
+}
+
+/* Inputs, textarea, select */
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid #e4ebfa;
+  border-radius: 6px;
+  background-color: var(--secondary-color);
+  color: var(--primary-font-color);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  border-color: #635fc7;
+}
+
+/* Textarea specifics */
+.modal-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Buttons */
+/* Close button (red X in top-right) */
+#close-modal-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4f; /* red */
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+#close-modal-btn:hover {
+  color: #d9363e; /* darker red on hover */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ========================
+   Responsive Modal
+======================== */
+
+/* Tablet adjustments */
+@media screen and (max-width: 1023px) {
+  .task-modal {
+    width: 95%;
+    max-width: 450px;
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 576px) {
+  .task-modal {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    border-radius: 0; /* full width look */
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* slide-up style */
+    animation: slideUp 0.25s ease-out;
+  }
+
+  @keyframes slideUp {
+    from { transform: translate(-50%, 100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+  }
+
+  .modal-content {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .modal-content input,
+  .modal-content textarea,
+  .modal-content select {
+    font-size: 0.9rem;
+  }
+}
+
