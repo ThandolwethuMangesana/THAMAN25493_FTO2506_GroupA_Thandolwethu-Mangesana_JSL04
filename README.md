@@ -57,5 +57,6 @@ A fully functional **dynamic task board** where tasks appear under the correct c
 
 ![mobile-modal-without-dropdown](./assets/mobile-modal1.png)   ![mobile-modal-withstatus-dropdown](./assets/mobile-modal2.png)
 
+- The status ( done does shwow, I took the snipet in the inspect (developer)) 
 
 # Thank You 😉
