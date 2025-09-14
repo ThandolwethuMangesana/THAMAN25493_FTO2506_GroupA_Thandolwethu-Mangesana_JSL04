@@ -11,12 +11,13 @@ function CreateinitialTaskCard(initialTasks) {
 }
 
 function getContainerByStatus(status) {
-    const column = document.querySelector('.column[data-status=${status}"]'); // Select the column based on the status // Select the column based on the status
+    const column = document.querySelector(`.column-div[data-status="${status}"]`); // Select the column based on the status
+    if(!column) return null;
     return column.querySelector(".tasks-container"); // Return the task container within the selected column
 }
 
 function ClearInitialTasks() {
-    document.querySelectorAll(".container").forEach(container => container.innerHTML = "");
+    document.querySelectorAll(".tasks-container").forEach(container => container.innerHTML = "");
 } // Clear all task containers
 
 function RenderInitialTasks() {
@@ -31,21 +32,23 @@ initialTasks.forEach(task => {
 
 function openInitialTaskModal(task) {
     const modal = document.getElementById("task-Modal"); // Get the modal element
+    // populates the modal fields
     document.getElementById("task-title").value = task.title; // Set the modal title input value
     document.getElementById("task-description").value = task.description; // Set the modal description input value
-   document.getElementById("task-status").value = task.status; // Set the modal status select value
+    document.getElementById("task-status").value = task.status; // Set the modal status select value
     modal.dataset.id = task.id; // Store the task ID in a data attribute for reference
-
     modal.showModal(); // Show the modal
 }
 
 function SetupModalClose () {
     const modal = document.getElementById("task-Modal"); 
-    document.getElementById("close-modal-btn") .addEventListener("click", 
+    document.getElementById("close-modal-btn");
+    if (modal && closeBtn) { closeBtn.addEventListener("click", 
         () => {
             modal.close();
-        });
-} // closing button
+        }); // closing button
+    }  
+}
 
 function initBoard() {
     ClearInitialTasks(); //wipes clear
@@ -53,4 +56,4 @@ function initBoard() {
     SetupModalClose(); //ensures modal closes
 }
 
-document.addEventListener("DOMContentLoaded", initBoard)
+document.addEventListener("DOMContentLoaded", initBoard);
