@@ -6,8 +6,8 @@ This project dynamically display tasks from the **given initial data** on the DO
 
 
 ## Figma Design Link
- - This project follows thi figma design and is pixel perfect, check it out
-Check the updated Figma Design: [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=Ki0CZk0RAjrk9Fhs-0)
+ - This project follows this figma design and is pixel perfect, check it out.
+ - [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=Ki0CZk0RAjrk9Fhs-0)
 
 ## Key Objectives
 
@@ -57,5 +57,6 @@ A fully functional **dynamic task board** where tasks appear under the correct c
 
 ![mobile-modal-without-dropdown](./assets/mobile-modal1.png)   ![mobile-modal-withstatus-dropdown](./assets/mobile-modal2.png)
 
+- The status ( done does shwow, I took the snipet in the inspect (developer)) 
 
 # Thank You 😉
