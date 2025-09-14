@@ -1,18 +1,18 @@
 import{initialTasks} from"./initialData.js"; // Import initial tasks from a separate file
 
 function CreateinitialTaskCard(initialTasks) {
-    const Card = ducument.createElement("div"); // Create a div element for the task card
+    const Card = document.createElement("div"); // Create a div element for the task card
     Card.className = "InitialTaskCard"; // Assign a class name for styling
     Card.textContent = initialTasks.title; // Set the text content to the task title
     Card.dataset.id = initialTasks.id; // Store the task ID in a data attribute for reference
 
-    Card.addEventListner("click", () => openInitialTaskModal(initialTasks)); // Add a click event listener to open the task modal
+    Card.addEventListener("click", () => openInitialTaskModal(initialTasks)); // Add a click event listener to open the task modal
     return Card; // Return the created task card element
 }
 
 function getContainerByStatus(status) {
-    const column = document.querySelector('.column[data-status=${status}"]'); // Select the column based on the status
-    return column.querySelector(".task-container"); // Return the task container within the selected column
+    const column = document.querySelector('.column[data-status=${status}"]'); // Select the column based on the status // Select the column based on the status
+    return column.querySelector(".tasks-container"); // Return the task container within the selected column
 }
 
 function ClearInitialTasks() {
@@ -31,10 +31,10 @@ initialTasks.forEach(task => {
 
 function openInitialTaskModal(task) {
     const modal = document.getElementById("task-Modal"); // Get the modal element
-    document.getElementById("task-title").value =initialTasks.title; // Set the modal title input value
-    document.getElementById("task-description").value =initialTasks.description; // Set the modal description input value
-    document.getElementById("task-status").value =initialTasks.status; // Set the modal status select value
-    modal.dataset.id =initialTasks.id; // Store the task ID in a data attribute for reference
+    document.getElementById("task-title").value = task.title; // Set the modal title input value
+    document.getElementById("task-description").value = task.description; // Set the modal description input value
+   document.getElementById("task-status").value = task.status; // Set the modal status select value
+    modal.dataset.id = task.id; // Store the task ID in a data attribute for reference
 
     modal.showModal(); // Show the modal
 }
@@ -53,4 +53,4 @@ function initBoard() {
     SetupModalClose(); //ensures modal closes
 }
 
-document.addEventListner("DOMContentLoaded", initBoard)
+document.addEventListener("DOMContentLoaded", initBoard)
