@@ -1,3 +1,5 @@
+// added export as my console gave me an uncaught reference
+
 export const initialTasks = [
   {
     id: 1,
