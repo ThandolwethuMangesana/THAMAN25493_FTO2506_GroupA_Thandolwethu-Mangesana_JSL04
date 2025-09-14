@@ -1,4 +1,4 @@
-const initialTasks = [
+export const initialTasks = [
   {
     id: 1,
     title: "Launch Epic Career 🚀",
@@ -39,4 +39,17 @@ const initialTasks = [
       "Create a portfolio showcasing your skills and projects to potential employers",
     status: "done",
   },
+  {
+  id: 14,
+  title: "Understand Databases ⚙️",
+  description: "Learn SQL and NoSQL basics",
+  status: "todo"
+},
+{
+  id: 15,
+  title: "Crush Frameworks 🖼️",
+  description: "Learn Everthing about Reach frameworks",
+  status: "todo"
+}
+
 ];
