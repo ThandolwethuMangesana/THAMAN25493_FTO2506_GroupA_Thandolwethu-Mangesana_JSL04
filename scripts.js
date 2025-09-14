@@ -29,3 +29,12 @@ initialTasks.forEach(task => {
 });
 }
 
+function openInitialTaskModal(task) {
+    const modal = document.getElementById("taskModal"); // Get the modal element
+    document.getElementById("task-title").value =initialTasks.title; // Set the modal title input value
+    document.getElementById("task-description").value =initialTasks.description; // Set the modal description input value
+    document.getElementById("task-status").value =initialTasks.status; // Set the modal status select value
+    modal.dataset.id =initialTasks.id; // Store the task ID in a data attribute for reference
+
+    modal.showModal(); // Show the modal
+}
